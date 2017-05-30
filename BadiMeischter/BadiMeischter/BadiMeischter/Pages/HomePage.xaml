@@ -5,7 +5,7 @@
             <ListView x:Name="BadiListView" ItemsSource="{Binding BadiList}" HasUnevenRows="True" ItemSelected="OnSelection">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Name}" Detail="{Binding Adresse}" />
+                        <TextCell Text="{Binding Properties.Name}" Detail="{Binding Properties.Adresse}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

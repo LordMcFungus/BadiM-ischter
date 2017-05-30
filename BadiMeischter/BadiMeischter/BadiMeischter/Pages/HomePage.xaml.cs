@@ -50,13 +50,13 @@ namespace BadiMeischter.Pages
             var client = new HttpClient();
             result = await client.GetStringAsync(Url);
 
-            //result  = result
 
 		    if (result == "")
-			    result = "[{\"Date\": \"Keine Daten vorhanden\"}]";
+			    result = "[{\"Name\": \"Keine Daten vorhanden\"}]";
 
             var json = JsonConvert.DeserializeObject<rteer>(result).Features;
-            //BadiList = new ObservableCollection<Badi>(JsonConvert.DeserializeObject<Badi>(json));
+
+            BadiList = new ObservableCollection<Badi>(json);
         }
 
 		#endregion

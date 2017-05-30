@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BadiMeischter.Pages.BadiDetailPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BadiMeischter.Pages.BadiDetailPage" Title="Detail">
 	<ContentPage.Content>
-        <Label Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center" Text="{Binding Item.Properties.Name}" FontSize="Medium" />
+        <ScrollView>
+        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Padding="20, 10, 20, 10">
+            <StackLayout>
+                <Label Text="{Binding Item.Properties.Name}" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+                <Label Text="xx Kilometer entfernt" HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+                <BoxView WidthRequest="1" HeightRequest="1" Color="Gray"></BoxView>
+            <StackLayout>
+                <Label Text="{Binding Item.Geometry.Coordinates[0]}" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+                <Label Text="{Binding Item.Geometry.Coordinates[1]}" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
 	</ContentPage.Content>
 </ContentPage>

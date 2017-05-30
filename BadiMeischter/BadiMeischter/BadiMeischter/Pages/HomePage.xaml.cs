@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿﻿﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -11,11 +11,6 @@ using Xamarin.Forms;
 
 namespace BadiMeischter.Pages
 {
-    public class rteer
-    {
-        public Badi[] Features { get; set; }
-    }
-
     public partial class HomePage : ContentPage, INotifyPropertyChanged
     {
         private const string Url = "https://data.stadt-zuerich.ch/dataset/freibad/resource/c9d56476-344e-4081-af86-0b38a3cc8ccd/download/freibad.json";
@@ -54,7 +49,7 @@ namespace BadiMeischter.Pages
 		    if (result == "")
 			    result = "[{\"Name\": \"Keine Daten vorhanden\"}]";
 
-            var json = JsonConvert.DeserializeObject<rteer>(result).Features;
+            var json = JsonConvert.DeserializeObject<Base>(result).Features;
 
             BadiList = new ObservableCollection<Badi>(json);
         }

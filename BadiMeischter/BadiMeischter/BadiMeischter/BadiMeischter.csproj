@@ -50,6 +50,9 @@
       <DependentUpon>BadiDetailPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\BadiInfo.cs" />
+    <Compile Include="Model\Geometry.cs" />
+    <Compile Include="Model\Base.cs" />
+    <Compile Include="Model\Coordinates.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">

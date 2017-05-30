@@ -54,9 +54,9 @@ namespace BadiMeischter.Pages
 
 		    if (result == "")
 			    result = "[{\"Date\": \"Keine Daten vorhanden\"}]";
-            
 
-            BadiList = new ObservableCollection<Badi>(JsonConvert.DeserializeObject<rteer>(result).Features);
+            var json = JsonConvert.DeserializeObject<rteer>(result).Features;
+            //BadiList = new ObservableCollection<Badi>(JsonConvert.DeserializeObject<Badi>(json));
         }
 
 		#endregion

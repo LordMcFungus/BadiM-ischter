@@ -13,9 +13,9 @@ namespace BadiMeischter.Pages
             BindingContext = this;
         }
 
-		private BadiInfo _item;
+		private Badi _item;
 
-		public BadiInfo Item
+		public Badi Item
 		{
 			get { return _item; }
 			set

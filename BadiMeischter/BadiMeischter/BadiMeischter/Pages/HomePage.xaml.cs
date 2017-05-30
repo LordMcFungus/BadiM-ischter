@@ -73,7 +73,7 @@ namespace BadiMeischter.Pages
         private void OnSelection(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem == null) return;
-            Navigation.PushAsync(new BadiDetailPage { Item = (BadiInfo) e.SelectedItem });
+            Navigation.PushAsync(new BadiDetailPage { Item = (Badi) e.SelectedItem });
 
             ((ListView)sender).SelectedItem = null;
         }

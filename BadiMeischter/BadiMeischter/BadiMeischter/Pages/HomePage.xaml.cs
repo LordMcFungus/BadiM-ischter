@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -73,7 +73,9 @@ namespace BadiMeischter.Pages
         private void OnSelection(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem == null) return;
-            Navigation.PushAsync(new BadiDetailPage { Item = e.SelectedItem });
+            Navigation.PushAsync(new BadiDetailPage { Item = (BadiInfo) e.SelectedItem });
+
+            ((ListView)sender).SelectedItem = null;
         }
 
         #endregion

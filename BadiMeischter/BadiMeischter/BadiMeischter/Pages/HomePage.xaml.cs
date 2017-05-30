@@ -61,11 +61,6 @@ namespace BadiMeischter.Pages
 
 		#endregion
 
-		private void OnSelection(object sender, SelectedItemChangedEventArgs e)
-		{
-			((ListView)sender).SelectedItem = null;
-		}
-
 		#region INotifyPropertyChanged
 
 		public new event PropertyChangedEventHandler PropertyChanged = delegate { };
@@ -75,6 +70,12 @@ namespace BadiMeischter.Pages
 			PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 		}
 
-		#endregion
-	}
+        private void OnSelection(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem == null) return;
+            Navigation.PushAsync(new BadiDetailPage { Item = e.SelectedItem });
+        }
+
+        #endregion
+    }
 }

@@ -13,7 +13,7 @@ namespace BadiMeischter
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new BadiMeischter.Pages.HomePage());
+            MainPage = new Pages.BadiHomePage();
         }
 
         protected override void OnStart()

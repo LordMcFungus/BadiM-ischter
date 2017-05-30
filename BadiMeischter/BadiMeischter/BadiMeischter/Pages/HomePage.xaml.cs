@@ -42,23 +42,12 @@ namespace BadiMeischter.Pages
 
             var result = "";
 
+            var client = new HttpClient();
+            result = await client.GetStringAsync(Url);
 
-            //remove ! if not behind proxy
-            if (CrossConnectivity.Current.IsConnected)
-            {
-                // Uncomment when not behind proxy              
-                var client = new HttpClient();
-                result = await client.GetStringAsync(Url);
-
-				if (result == "")
-					result = "[{\"Date\": \"Keine Daten vorhanden\"}]";
-            } else {
-				if (result == "")
-				{
-					await DisplayAlert("Keine Netzwerkverbindung", "Die Daten konnten nicht geladen werden", "Ok");
-					result = "[{\"Date\": \"Die Daten konten nicht geladen werden\"}]";
-				}
-            }
+		    if (result == "")
+			    result = "[{\"Date\": \"Keine Daten vorhanden\"}]";
+            
 
             BadiList = new ObservableCollection<Badi>(JsonConvert.DeserializeObject<IEnumerable<Badi>>(result));
         }

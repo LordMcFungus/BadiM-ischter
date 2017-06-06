@@ -5,14 +5,14 @@
              xmlns:pages="clr-namespace:BadiMeischter.Pages;assembly=BadiMeischter"
              Title="MadiBeischter">
   <!--Pages can be added as references or inline-->
-  <NavigationPage Title="Chääs">
+  <NavigationPage Title="Freibäder">
         <x:Arguments>
             <pages:HomePage/>
         </x:Arguments>
   </NavigationPage>
-    <NavigationPage Title="Toascht">
+    <NavigationPage Title="Halenbäder">
         <x:Arguments>
-            <pages:HomePage/>
+            <pages:HallenbadHomePage/>
         </x:Arguments>
     </NavigationPage>
 </TabbedPage>

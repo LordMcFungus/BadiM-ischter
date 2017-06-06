@@ -27,16 +27,6 @@ namespace BadiMeischter.Pages
             BadiListView.Footer = string.Empty;
         }
 
-		public ObservableCollection<Badi> BadiList
-		{
-			get { return _badiList; }
-			set
-			{
-				_badiList = value;
-				RaisePropertyChanged();
-			}
-		}
-
         #region Overrides of Page
 
         protected override async void OnAppearing()
@@ -88,6 +78,16 @@ namespace BadiMeischter.Pages
                 BadiList = filteredBadi;
             }
         }
+
+		public ObservableCollection<Badi> BadiList
+		{
+			get { return _badiList; }
+			set
+			{
+				_badiList = value;
+				RaisePropertyChanged();
+			}
+		}
 
 		public string SearchText
 		{

@@ -114,6 +114,15 @@
     <BundleResource Include="Resources\Icon-Small%402x.png" />
     <BundleResource Include="Resources\Icon-Small%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <BundleResource Include="Resources\ic_location_on.png" />
+    <BundleResource Include="Resources\ic_location_on%402x.png" />
+    <BundleResource Include="Resources\ic_location_on%403x.png" />
+    <BundleResource Include="Resources\ic_perm_device_information.png" />
+    <BundleResource Include="Resources\ic_perm_device_information%402x.png" />
+    <BundleResource Include="Resources\ic_perm_device_information%403x.png" />
+    <BundleResource Include="Resources\ic_keyboard_arrow_right.png" />
+    <BundleResource Include="Resources\ic_keyboard_arrow_right%402x.png" />
+    <BundleResource Include="Resources\ic_keyboard_arrow_right%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

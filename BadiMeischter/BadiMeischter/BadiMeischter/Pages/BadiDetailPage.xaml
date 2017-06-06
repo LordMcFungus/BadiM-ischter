@@ -13,22 +13,22 @@
     
 	<ContentPage.Content>
         <ScrollView>
-        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Padding="20, 10, 20, 10">
-            <StackLayout>
-                <Label Text="{Binding Item.Properties.Name}" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Padding="0" Margin="0">
+            <StackLayout Padding="10">
+                <Label Text="{Binding Item.Properties.Name}" FontSize="Large" HorizontalOptions="CenterAndExpand" />
                 <Label Text="xx Kilometer entfernt" HorizontalOptions="CenterAndExpand"/>
             </StackLayout>
                 <BoxView WidthRequest="1" HeightRequest="1" Color="Gray"></BoxView>
             <StackLayout>
-                 <StackLayout Orientation="Horizontal" x:Name="MapStackLayout" >
-                     <Image Source="location.png"/>
+                 <StackLayout Orientation="Horizontal" x:Name="MapStackLayout" Margin="10">
+                     <Image Source="ic_location_on.png"/>
                      <Label Text="{Binding Item.Properties.Adresse}" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
-                     <Image Source="right_arrow.png" />
+                     <Image Source="ic_keyboard_arrow_right.png" />
                  </StackLayout>
-                 <StackLayout Orientation="Horizontal" x:Name="LinkStackLayout" Padding="0,10,0,0">
-                     <Image Source="ic_world.png"/>
+                 <StackLayout Orientation="Horizontal" x:Name="LinkStackLayout" Padding="0,10,0,0" Margin="10">
+                     <Image Source="ic_perm_device_information.png"/>
                      <Label Text="{Binding Item.Properties.Www, Converter={StaticResource urlConverter}}" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
-                     <Image Source="right_arrow.png" />
+                     <Image Source="ic_keyboard_arrow_right.png" />
                  </StackLayout>
             </StackLayout>
             <BoxView WidthRequest="1" HeightRequest="1" Color="Gray"></BoxView>

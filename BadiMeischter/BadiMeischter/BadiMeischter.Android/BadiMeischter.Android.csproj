@@ -125,6 +125,21 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_location_on.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_location_on.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_location_on.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_location_on.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_perm_device_information.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_perm_device_information.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_perm_device_information.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_location_on.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_perm_device_information.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_perm_device_information.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_keyboard_arrow_right.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_keyboard_arrow_right.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_keyboard_arrow_right.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_keyboard_arrow_right.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_keyboard_arrow_right.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />

@@ -1,18 +1,17 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BadiMeischter.Pages.BadiHomePage"
              xmlns:pages="clr-namespace:BadiMeischter.Pages;assembly=BadiMeischter"
-             Title="MadiBeischter">
-  <!--Pages can be added as references or inline-->
+             Title="BadiMeischter">
   <NavigationPage Title="Freibäder">
-        <x:Arguments>
-            <pages:HomePage/>
+        <x:Arguments NavigationPage.BackButtonTitle="Zurück">
+            <pages:HomePage Title="BadiMeischter"/>
         </x:Arguments>
   </NavigationPage>
-    <NavigationPage Title="Halenbäder">
-        <x:Arguments>
-            <pages:HallenbadHomePage/>
+    <NavigationPage Title="Hallenbäder">
+        <x:Arguments  NavigationPage.BackButtonTitle="Zurück">
+            <pages:HallenbadHomePage Title="BadiMeischter" />
         </x:Arguments>
     </NavigationPage>
 </TabbedPage>

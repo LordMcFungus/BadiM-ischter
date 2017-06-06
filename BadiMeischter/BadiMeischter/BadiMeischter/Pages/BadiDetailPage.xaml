@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BadiMeischter.Pages.BadiDetailPage" Title="Detail">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="BadiMeischter.Pages.BadiDetailPage" 
+    xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+    xmlns:helper="clr-namespace:BadiMeischter.Helper;assembly=BadiMeischter"
+    Title="Detail">
+       <ContentPage.Resources>
+        <ResourceDictionary>
+            <helper:FormatUrlConverter x:Key="urlConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
 	<ContentPage.Content>
         <ScrollView>
         <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Padding="20, 10, 20, 10">
@@ -9,9 +20,24 @@
             </StackLayout>
                 <BoxView WidthRequest="1" HeightRequest="1" Color="Gray"></BoxView>
             <StackLayout>
-                <Label Text="{Binding Item.Geometry.Coordinates[0]}" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
-                <Label Text="{Binding Item.Geometry.Coordinates[1]}" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+                 <StackLayout Orientation="Horizontal" x:Name="MapStackLayout" >
+                     <Image Source="location.png"/>
+                     <Label Text="{Binding Item.Properties.Adresse}" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                     <Image Source="right_arrow.png" />
+                 </StackLayout>
+                 <StackLayout Orientation="Horizontal" x:Name="LinkStackLayout" Padding="0,10,0,0">
+                     <Image Source="ic_world.png"/>
+                     <Label Text="{Binding Item.Properties.Www, Converter={StaticResource urlConverter}}" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                     <Image Source="right_arrow.png" />
+                 </StackLayout>
             </StackLayout>
+            <BoxView WidthRequest="1" HeightRequest="1" Color="Gray"></BoxView>
+            <StackLayout VerticalOptions="StartAndExpand" Padding="15, 5">
+                    <maps:Map VerticalOptions="FillAndExpand" HeightRequest="300"
+                        x:Name="BadiMap"
+                        IsShowingUser="true"
+                        MapType="Street"/>
+                </StackLayout>
         </StackLayout>
     </ScrollView>
 	</ContentPage.Content>

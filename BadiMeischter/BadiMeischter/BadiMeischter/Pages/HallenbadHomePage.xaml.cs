@@ -17,24 +17,16 @@ namespace BadiMeischter.Pages
 	public partial class HallenbadHomePage : ContentPage, INotifyPropertyChanged
 	{
 		private const string Url = "https://data.stadt-zuerich.ch/dataset/hallenbad/resource/ab6b84d2-710b-43c2-b50e-4bfa0448a4f0/download/hallenbad.json";
-		private System.Collections.ObjectModel.ObservableCollection<Badi> _badiList;
+		private ObservableCollection<Badi> _hallenbadList;
+		private string searchText = string.Empty;
+		public ObservableCollection<Badi> _hallenbadCopy;
 
 		public HallenbadHomePage()
 		{
 			InitializeComponent();
 			BindingContext = this;
-			HallenbadList = new System.Collections.ObjectModel.ObservableCollection<Badi>();
+			HallenbadList = new ObservableCollection<Badi>();
 			HallenbadListView.Footer = string.Empty;
-		}
-
-		public ObservableCollection<Badi> HallenbadList
-		{
-			get { return _badiList; }
-			set
-			{
-				_badiList = value;
-				RaisePropertyChanged();
-			}
 		}
 
 		#region Overrides of Page
@@ -48,13 +40,10 @@ namespace BadiMeischter.Pages
 			var client = new HttpClient();
 			result = await client.GetStringAsync(Url);
 
-
-			if (result == "")
-				result = "[{\"Name\": \"Keine Daten vorhanden\"}]";
-
 			var json = JsonConvert.DeserializeObject<Base>(result).Features;
 
-			HallenbadList = new System.Collections.ObjectModel.ObservableCollection<Badi>(json);
+			HallenbadList = new ObservableCollection<Badi>(json);
+            _hallenbadCopy = HallenbadList;
 		}
 
 		#endregion
@@ -77,5 +66,42 @@ namespace BadiMeischter.Pages
 		}
 
 		#endregion
+
+		private void ApplyFilter()
+		{
+			var filteredHallenbad = new ObservableCollection<Badi>();
+            foreach (var hallenbad in _hallenbadCopy.Where(x => x.Properties.Name.ToLowerInvariant().Contains(searchText.ToLowerInvariant())).Select(x => x))
+			{
+				filteredHallenbad.Add(hallenbad);
+			}
+
+			if (filteredHallenbad != null)
+			{
+				HallenbadList = filteredHallenbad;
+			}
+		}
+
+		public ObservableCollection<Badi> HallenbadList
+		{
+			get { return _hallenbadList; }
+			set
+			{
+				_hallenbadList = value;
+				RaisePropertyChanged();
+			}
+		}
+
+		public string SearchText
+		{
+			get { return searchText; }
+			set
+			{
+				if (Equals(searchText, value)) return;
+				searchText = value;
+				OnPropertyChanged();
+
+				ApplyFilter();
+			}
+		}
 	}
 }

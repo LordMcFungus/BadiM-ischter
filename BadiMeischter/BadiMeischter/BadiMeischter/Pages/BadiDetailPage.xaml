@@ -16,7 +16,7 @@
         <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Padding="0" Margin="0">
             <StackLayout Padding="10">
                 <Label Text="{Binding Item.Properties.Name}" FontSize="Large" HorizontalOptions="CenterAndExpand" />
-                <Label Text="xx Kilometer entfernt" HorizontalOptions="CenterAndExpand"/>
+                <!--<Label Text="xx Kilometer entfernt" HorizontalOptions="CenterAndExpand"/>-->
             </StackLayout>
                 <BoxView WidthRequest="1" HeightRequest="1" Color="Gray"></BoxView>
             <StackLayout>

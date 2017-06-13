@@ -140,6 +140,26 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_keyboard_arrow_right.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_keyboard_arrow_right.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_keyboard_arrow_right.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_pool.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_pool.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_pool.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_pool.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_pool.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_indoor.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_star.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_star_border.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_indoor.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_star.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_star_border.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_indoor.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_star.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_star_border.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_indoor.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_star.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_star_border.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_indoor.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_star.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_star_border.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />

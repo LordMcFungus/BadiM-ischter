@@ -123,6 +123,12 @@
     <BundleResource Include="Resources\ic_keyboard_arrow_right.png" />
     <BundleResource Include="Resources\ic_keyboard_arrow_right%402x.png" />
     <BundleResource Include="Resources\ic_keyboard_arrow_right%403x.png" />
+    <BundleResource Include="Resources\ic_pool.png" />
+    <BundleResource Include="Resources\ic_pool%402x.png" />
+    <BundleResource Include="Resources\ic_pool%403x.png" />
+    <BundleResource Include="Resources\ic_indoor.png" />
+    <BundleResource Include="Resources\ic_indoor%402x.png" />
+    <BundleResource Include="Resources\ic_indoor%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -4,12 +4,12 @@
              x:Class="BadiMeischter.Pages.BadiHomePage"
              xmlns:pages="clr-namespace:BadiMeischter.Pages;assembly=BadiMeischter"
              Title="BadiMeischter">
-  <NavigationPage Title="Freibäder">
+  <NavigationPage Title="Freibäder" Icon="ic_pool">
         <x:Arguments NavigationPage.BackButtonTitle="Zurück">
             <pages:HomePage Title="BadiMeischter"/>
         </x:Arguments>
   </NavigationPage>
-    <NavigationPage Title="Hallenbäder">
+    <NavigationPage Title="Hallenbäder" Icon="ic_indoor">
         <x:Arguments  NavigationPage.BackButtonTitle="Zurück">
             <pages:HallenbadHomePage Title="BadiMeischter" />
         </x:Arguments>

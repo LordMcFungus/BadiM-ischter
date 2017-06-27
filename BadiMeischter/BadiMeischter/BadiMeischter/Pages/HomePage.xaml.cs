@@ -5,9 +5,11 @@ using System.ComponentModel;
 using System.Linq;
 using System.Net.Http;
 using System.Runtime.CompilerServices;
+using BadiMeischter.Helper;
 using BadiMeischter.Model;
 using Newtonsoft.Json;
 using Plugin.Connectivity;
+using Plugin.Geolocator;
 using Xamarin.Forms;
 
 namespace BadiMeischter.Pages
@@ -17,6 +19,7 @@ namespace BadiMeischter.Pages
         private const string Url = "https://data.stadt-zuerich.ch/dataset/freibad/resource/c9d56476-344e-4081-af86-0b38a3cc8ccd/download/freibad.json";
         private ObservableCollection<Badi> _badiList;
         private string searchText = string.Empty;
+        private LocationHelper locationHelper = new LocationHelper();
         public ObservableCollection<Badi> _badiCopy;
 
         public HomePage()
@@ -42,6 +45,15 @@ namespace BadiMeischter.Pages
 
             BadiList = new ObservableCollection<Badi>(json);
             _badiCopy = new ObservableCollection<Badi>(BadiList);
+
+			var locator = CrossGeolocator.Current;
+			locator.DesiredAccuracy = 50;
+
+			var position = await locator.GetPositionAsync(10000);
+
+            foreach(var item in BadiList) {
+                item.Geometry.Distance = Math.Round(locationHelper.CalculateDistance(item.Geometry.Coordinates[1], item.Geometry.Coordinates[0], position.Latitude, position.Longitude, 'K'), 1) + "km entfernt";
+            }
         }
 
 		#endregion

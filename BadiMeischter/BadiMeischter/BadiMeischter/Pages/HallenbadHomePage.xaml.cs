@@ -7,8 +7,10 @@ using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using BadiMeischter.Helper;
 using BadiMeischter.Model;
 using Newtonsoft.Json;
+using Plugin.Geolocator;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -20,6 +22,7 @@ namespace BadiMeischter.Pages
 		private ObservableCollection<Badi> _hallenbadList;
 		private string searchText = string.Empty;
 		public ObservableCollection<Badi> _hallenbadCopy;
+        private LocationHelper locationHelper = new LocationHelper();
 
 		public HallenbadHomePage()
 		{
@@ -44,6 +47,16 @@ namespace BadiMeischter.Pages
 
 			HallenbadList = new ObservableCollection<Badi>(json);
             _hallenbadCopy = HallenbadList;
+
+			var locator = CrossGeolocator.Current;
+			locator.DesiredAccuracy = 50;
+
+			var position = await locator.GetPositionAsync(10000);
+
+            foreach (var item in HallenbadList)
+			{
+                item.Geometry.Distance = Math.Round(locationHelper.CalculateDistance(item.Geometry.Coordinates[1], item.Geometry.Coordinates[0], position.Latitude, position.Longitude, 'K'), 1) + "km entfernt";
+			}
 		}
 
 		#endregion

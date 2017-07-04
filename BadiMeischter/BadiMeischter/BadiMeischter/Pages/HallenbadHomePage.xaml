@@ -6,7 +6,7 @@
             <ListView x:Name="HallenbadListView" ItemsSource="{Binding HallenbadList}" HasUnevenRows="True" ItemSelected="OnSelection">
                 <ListView.ItemTemplate>
                     <DataTemplate >
-                        <TextCell Text="{Binding Properties.Name}" Detail="{Binding Geometry.Distance}"/>
+                        <TextCell Text="{Binding Properties.Name}" Detail="{Binding Properties.Adresse}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
